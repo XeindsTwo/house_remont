@@ -1,0 +1,144 @@
+.footer {
+  @include bg;
+  margin-top: 130px;
+  padding: 65px 0 20px;
+  color: $white;
+  position: relative;
+  background-color: #242527;
+  overflow: hidden;
+
+  &::before {
+    @include bg;
+    @include pseudo;
+    bottom: -130px;
+    right: 0;
+    width: 567px;
+    height: 495px;
+    background-image: url("../../public/static/images/bg-footer.svg");
+  }
+
+  &__top {
+    @include flex-between(30);
+    position: relative;
+    z-index: 20;
+    border-bottom: 2px solid $accent;
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+  }
+
+  &__phone {
+    font-size: 34px;
+    padding-bottom: 1px;
+    font-weight: 400;
+    position: relative;
+    outline: 1px solid transparent;
+    border-radius: 4px;
+    transition: color .4s, outline-color .4s;
+
+    &::before {
+      @include pseudo;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: $white;
+      transition: width .4s, opacity .4s;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &:focus {
+      outline-color: $accent;
+
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__socials {
+    @include flex-align-center(40);
+
+    &-link {
+      @include flex-center;
+      transition: opacity .4s;
+
+      &:hover {
+        svg path {
+          fill: $white;
+        }
+      }
+
+      &:focus {
+        opacity: .6;
+      }
+
+      svg path {
+        fill: $accent;
+      }
+    }
+  }
+
+  &__links {
+    @include flex-align-center(45);
+    position: relative;
+    z-index: 20;
+    margin-bottom: 60px;
+  }
+
+  &__link {
+    transition: color .4s, border .4s;
+    padding-bottom: 1px;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:focus {
+      border-bottom-color: $accent;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    align-items: flex-end;
+    gap: 65px;
+  }
+
+  &__column {
+    @include flex-column(4);
+  }
+
+  &__label {
+    color: #b0b0b0;
+    font-size: 15px;
+    display: block;
+    font-weight: 500;
+  }
+
+  &__policy {
+    margin-left: auto;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 2px;
+    color: #b7b7b7;
+    padding: 2px;
+    transition: color .4s, outline-color .4s;
+    outline: 1px solid transparent;
+
+    &:hover {
+      color: $white;
+    }
+
+    &:focus {
+      outline-color: inherit;
+    }
+  }
+}

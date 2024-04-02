@@ -1,0 +1,120 @@
+.reviews {
+  padding-bottom: 40px;
+
+  &__title {
+    margin-bottom: 35px;
+  }
+
+  &__top {
+    @include flex-between(20);
+    align-items: center;
+    margin-bottom: 35px;
+  }
+
+  &__control {
+    @include flex-align-center(15);
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    @include flex-center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid $accent;
+    transition: border .4s, opacity .4s, background-color .4s;
+
+    &:disabled {
+      opacity: .4;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: $accent;
+
+      svg path {
+        stroke: $white;
+      }
+    }
+
+    &:focus {
+      background-color: $black500;
+      border-color: $black500;
+
+      svg path {
+        stroke: $white;
+      }
+    }
+
+    svg {
+      transform: translateX(1px);
+    }
+
+    &--prev {
+      transform: scale(-1);
+    }
+  }
+
+  &__link {
+    @include flex-align-center(10);
+    outline: 1px solid transparent;
+    padding: 6px;
+    transform: translateX(-6px);
+    border-radius: 5px;
+    transition: color .4s, border .4s, outline-color .4s, opacity .4s;
+
+    &:hover {
+      color: $accent10;
+
+      svg path {
+        fill: $accent10;
+      }
+    }
+
+    &:focus {
+      outline-color: $accent10;
+    }
+  }
+
+  &__swiper {
+    cursor: grab;
+  }
+
+  .swiper-slide {
+    max-width: 912px;
+  }
+
+  &__slide {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__content {
+    max-width: 352px;
+  }
+
+  &__img {
+    @include objectCoverBg;
+    user-select: none;
+  }
+
+  &__user {
+    @include flex-align-center(16);
+    margin-bottom: 30px;
+  }
+
+  &__avatar {
+    @include objectCoverBg;
+    border-radius: 50%;
+  }
+
+  &__info {
+    @include flex-column(2);
+  }
+
+  &__city {
+    font-size: 14px;
+    color: $accent;
+  }
+}

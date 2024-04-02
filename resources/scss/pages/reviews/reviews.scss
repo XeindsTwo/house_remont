@@ -1,0 +1,126 @@
+@import "./reviews-form";
+
+.reviews-page {
+  &__empty {
+    @include flex-column(0);
+    max-width: 320px;
+    margin: 70px auto 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__subtext {
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  &__info {
+    a {
+      transition: color .4s, border .4s;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 1px;
+      color: $accent10;
+
+      &:hover {
+        color: $black500;
+      }
+
+      &:focus {
+        color: $black500;
+        border-bottom-color: $black500;
+      }
+    }
+  }
+
+  &__link {
+    @include flex-align-center(12);
+    max-width: max-content;
+    margin-bottom: 60px;
+    padding: 14px 19px;
+    line-height: 1;
+    border: 1px solid $black500;
+    border-radius: 6px;
+    transition: color .4s, border .4s, background-color .4s;
+
+    &:hover {
+      background-color: $black500;
+      color: $white;
+    }
+
+    &:focus {
+      border-color: $accent10;
+      color: $black500;
+      background-color: rgba($accent10, .1);
+    }
+  }
+
+  &__noauth {
+    margin-bottom: 40px;
+
+    a {
+      color: $accent;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      transition: color .4s, border .4s;
+
+      &:hover {
+        color: $black500;
+      }
+
+      &:focus {
+        border-color: $black500;
+        color: $black500;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 70px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    display: flex;
+    gap: 50px;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__content {
+    margin-top: 25px;
+    max-width: 530px;
+    width: 100%;
+  }
+
+  &__top {
+    @include flex-align-center(17);
+    margin-bottom: 20px;
+  }
+
+  &__avatar {
+    @include objectCoverBg;
+    border-radius: 50%;
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__photo {
+    @include objectCoverBg;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__comment {
+    line-height: 1.5;
+  }
+}

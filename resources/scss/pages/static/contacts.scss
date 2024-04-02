@@ -1,0 +1,28 @@
+.contacts {
+  &__title {
+    font-weight: 500;
+    font-size: 46px;
+    margin-bottom: 48px;
+  }
+
+  &__text {
+    @include flex-column(26.56);
+    line-height: 1.5;
+
+    a {
+      transition: color .4s, border .4s;
+      padding-bottom: 3px;
+      border: 1px solid transparent;
+      border-bottom-color: $accent10;
+
+      &:hover {
+        color: $accent10;
+      }
+
+      &:focus {
+        color: rgba($accent10, .7);
+        border-bottom-color: rgba($accent10, .5);
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.education {
+  &__inner {
+    @include flex-align-center(50);
+  }
+
+  &__title {
+    margin-bottom: 34px;
+    padding-bottom: 15px;
+  }
+
+  &__text {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  &__img {
+    @include objectCoverBg;
+  }
+}

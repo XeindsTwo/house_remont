@@ -1,0 +1,50 @@
+@import "./specialists";
+@import "./info";
+@import "./education";
+@import "./letters";
+
+.company {
+  position: relative;
+
+  &::before {
+    @include pseudo;
+    right: -100px;
+    top: -215px;
+    width: 618px;
+    height: 637px;
+    z-index: -1;
+    background-image: url("../../public/static/images/company.svg");
+  }
+
+  &__title {
+    font-size: 38px;
+    font-weight: 500;
+    max-width: 900px;
+    margin-bottom: 52px;
+
+    span {
+      background: linear-gradient(90deg, #FF636E -2.35%, #FF766E 37.31%, #FC8E70 70.46%, #FCAB73 101.97%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+  }
+
+  &__text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    font-size: 18px;
+    margin-bottom: 20px;
+
+    p:last-child {
+      grid-column: span 2;
+    }
+  }
+
+  &__photo {
+    @include objectCoverBg;
+    width: 100%;
+  }
+}

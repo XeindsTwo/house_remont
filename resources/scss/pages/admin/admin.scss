@@ -1,0 +1,9 @@
+@import "manage_feedback_requests";
+
+.admin {
+  &__title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+}

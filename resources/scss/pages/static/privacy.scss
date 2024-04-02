@@ -1,0 +1,42 @@
+.privacy {
+  &__content {
+    max-width: 1000px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 40px;
+    line-height: 1.22;
+    max-width: 650px;
+    font-weight: 500;
+  }
+
+  &__subtext {
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  &__chapter {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+
+    &-title {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      display: flex;
+      color: #FC8E70;
+    }
+
+    &-text {
+      @include flex-column(20);
+      line-height: 1.6;
+    }
+
+    &-list {
+      margin-top: -10px;
+      @include flex-column(8);
+    }
+  }
+}

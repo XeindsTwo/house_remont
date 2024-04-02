@@ -1,0 +1,50 @@
+.specialists {
+  &__top {
+    margin-bottom: 60px;
+    @include flex-align-center(30);
+    justify-content: space-between;
+
+    p {
+      max-width: 475px;
+      margin-left: auto;
+    }
+  }
+
+  &__title {
+    max-width: 600px;
+    margin-bottom: 0;
+  }
+
+  &__swiper {
+    padding: 0 25px;
+    cursor: grab;
+  }
+
+  .swiper-slide {
+    max-width: 260px;
+    user-select: none;
+  }
+
+  &__slide {
+    text-align: center;
+  }
+
+  &__img {
+    @include objectCoverBg;
+    object-position: top;
+    border-radius: 50%;
+    margin-bottom: 14px;
+  }
+
+  &__name {
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  &__job {
+    line-height: 1.25;
+  }
+}

@@ -1,0 +1,105 @@
+.auth {
+  &__wrapper {
+    border-radius: 28px;
+    background-color: #fdf0ee;
+    max-width: 980px;
+    width: 100%;
+    padding: 42px 36px 26px;
+    margin: 150px auto 0;
+  }
+
+  &__logo {
+    margin-bottom: 30px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 130px;
+  }
+
+  &__content {
+    max-width: 370px;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    font-size: 14px;
+  }
+
+  &__form {
+    max-width: 430px;
+    width: 100%;
+  }
+
+  &__list {
+    @include flex-column(24);
+  }
+
+  &__input {
+    border-radius: 4px;
+    padding: 14px 14px;
+    border: 1px solid #1f1f1f;
+
+    &--password {
+      padding-right: 50px;
+    }
+
+    &:-webkit-autofill, &:-webkit-autofill:focus {
+      -webkit-box-shadow: inset 0 0 0 50px #fdf0ee;
+    }
+  }
+
+  &__buttons {
+    @include flex-align-center(25);
+    justify-content: flex-end;
+    margin-top: 38px;
+  }
+
+  &__btn {
+    border-radius: 36px;
+    background-color: $accent;
+    border: 1px solid transparent;
+    font-size: 14px;
+    color: $white;
+    transition: color .4s, border .4s, outline-color .4s, background-color .4s;
+    outline: 2px solid transparent;
+    padding: 10px 20px;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $accent;
+      color: $black500;
+    }
+
+    &:focus {
+      outline-color: $accent;
+      background-color: transparent;
+      border-color: transparent;
+      color: $black500;
+    }
+
+    &-dop {
+      background-color: transparent;
+      color: $black500;
+
+      &:hover {
+        background-color: rgba($accent, .15);
+        border-color: transparent;
+      }
+
+      &:focus {
+        outline-color: $accent;
+        background-color: transparent;
+        border-color: transparent;
+        color: $black500;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.info {
+  &__inner {
+    @include flex-between(30);
+    align-items: center;
+  }
+
+  &__title {
+    max-width: 510px;
+    font-size: 36px;
+    margin-bottom: 0;
+    padding-bottom: 16px;
+  }
+
+  &__text {
+    max-width: 600px;
+  }
+}

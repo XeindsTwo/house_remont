@@ -1,0 +1,78 @@
+.header {
+  padding: 22px 0;
+  border-bottom: 1px solid #ebebeb;
+  background-color: $white;
+  position: relative;
+  z-index: 5;
+
+  &__inner {
+    @include flex-align-center(50);
+  }
+
+  &__nav {
+    margin-left: auto;
+  }
+
+  &__list {
+    @include flex-align-center(25);
+  }
+
+  &__link {
+    position: relative;
+    font-size: 14px;
+    padding-bottom: 3px;
+    transition: color .3s;
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &:focus {
+      color: $accent;
+    }
+
+    &::before {
+      @include pseudo;
+      bottom: 0;
+      left: 1px;
+      width: 0;
+      height: 1px;
+      transition: width .4s;
+      background-color: #242424;
+    }
+  }
+
+  &__phones {
+    @include flex-align-center(12);
+  }
+
+  &__whatsapp {
+    width: 38px;
+    height: 38px;
+    @include flex-center;
+    background-color: #43d854;
+    border-radius: 50%;
+    transition: background-color .4s;
+
+    &:hover {
+      background-color: #2fef42;
+    }
+
+    &:focus {
+      background-color: $black500;
+    }
+  }
+
+  &__svg {
+    transform: translateY(-1px) translateX(1px);
+    width: 21px;
+    height: 21px;
+  }
+
+  &__phone {
+    color: #FF766E;
+    font-size: 18px;
+  }
+}

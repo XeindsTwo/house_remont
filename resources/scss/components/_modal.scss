@@ -1,0 +1,105 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 500px;
+  width: 100%;
+  background-color: $white;
+  padding: 25px;
+  border-radius: 16px;
+  font-size: 14px;
+  transform: translate(-50%, 0%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all .5s;
+  z-index: 300;
+
+  &--long {
+    max-width: 600px;
+  }
+
+  &--active {
+    transform: translate(-50%, -50%);
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: 24px;
+    max-width: 430px;
+    margin-bottom: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+
+    &--bottom {
+      margin-bottom: 26px;
+    }
+  }
+
+  &__text {
+    max-width: 420px;
+    color: #667085;
+  }
+
+  &__close {
+    padding: 1px;
+    display: flex;
+    transition: transform .7s, opacity .4s;
+    position: absolute;
+    right: 20px;
+
+    &:hover {
+      transform: rotate(180deg);
+
+      svg path {
+        stroke: $accent;
+      }
+    }
+
+    &:focus {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__list {
+    @include flex-column(20);
+    margin-bottom: 24px;
+
+    &--top {
+      margin-top: 16px;
+    }
+  }
+
+  &__item {
+    @include flex-column(5);
+  }
+
+  &__actions {
+    @include flex-align-center(13);
+  }
+
+  &__complete, &__cancel {
+    font-weight: 400;
+    padding: 18px 23px;
+  }
+
+  &__cancel {
+    background-color: transparent;
+    border-color: $accent;
+    color: $black500;
+
+    &:hover {
+      background-color: rgba($accent, .2);
+      color: #000;
+    }
+
+    &:focus {
+      background-color: $accent;
+      color: $white;
+      border-color: transparent;
+    }
+  }
+}
