@@ -1,0 +1,92 @@
+.portfolio-show {
+  &__top {
+    @include flex-align-center(0);
+    min-height: 530px;
+    max-height: 560px;
+    background-color: #242527;
+    color: $white;
+    margin-bottom: 48px;
+    overflow: hidden;
+  }
+
+  &__left {
+    max-width: 400px;
+    width: 100%;
+    padding: 40px 40px 25px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 34px;
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    @include flex-column(46);
+  }
+
+  &__item {
+    @include flex-column(0);
+  }
+
+  &__subtext {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $gray300;
+  }
+
+  &__value {
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  &__img {
+    @include objectCoverBg;
+    width: 100%;
+    height: auto;
+    max-width: 890px;
+  }
+
+  &__description {
+    line-height: 1.5;
+    margin-bottom: 26px;
+    max-width: 1000px;
+  }
+
+  &__gallery {
+    padding: 45px 0;
+    margin-bottom: -120px;
+    background-color: #fafafa;
+  }
+
+  &__subtitle {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+
+  &__photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+
+  &__link {
+    border: 2px solid transparent;
+    transition: opacity .4s, border .4s;
+
+    &:hover {
+      opacity: .6;
+    }
+
+    &:focus {
+      border-color: $accent10;
+      opacity: 1;
+    }
+  }
+
+  &__photo {
+    @include objectCoverBg;
+    width: 100%;
+  }
+}

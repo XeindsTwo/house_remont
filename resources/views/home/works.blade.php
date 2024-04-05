@@ -46,6 +46,6 @@
         </p>
       </li>
     </ul>
-    <a class="works__more btn" href="">Посмотрите ещё 1332 работ</a>
+    <a class="works__more btn" href="{{route('page.works')}}">Посмотрите ещё 1332 работ</a>
   </div>
 </section>

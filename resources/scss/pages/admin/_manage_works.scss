@@ -1,0 +1,166 @@
+.admin-works {
+  &__empty {
+    margin: 50px auto 20px;
+    text-align: center;
+    max-width: 310px;
+  }
+
+  &__create {
+    font-weight: 400;
+    padding: 16px 22px;
+  }
+
+  &__items {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 35px 30px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+
+    &-item {
+      @include flex-column(5);
+
+      &.long {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  &__cost {
+    line-height: 1;
+    position: absolute;
+    padding: 6px 12px;
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(90deg, #FF636E -2.35%, #FF766E 37.31%, #FC8E70 70.46%, #FCAB73 101.97%);
+    color: $white;
+    z-index: 10;
+    border-radius: 15px;
+  }
+
+  &__name {
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  &__img {
+    @include objectCoverBg;
+    width: 100%;
+  }
+
+  &__input {
+    border: 1px solid $gray300;
+    border-radius: 12px;
+    padding: 16px;
+
+    &.textarea {
+      resize: none;
+      min-height: 160px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: -22px;
+    display: flex;
+  }
+
+  &__add {
+    color: #2db41c;
+    border: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    transition: color .4s, border .4s;
+    padding-bottom: 1px;
+    margin-bottom: 12px;
+
+    &:hover {
+      border-bottom-color: #2db41c;
+    }
+
+    &:focus {
+      border-color: #2db41c;
+    }
+  }
+
+  &__categories {
+    margin-bottom: 40px;
+  }
+
+  &__category {
+    & .admin-works__list {
+      margin-bottom: 0;
+    }
+  }
+
+  &__submit {
+    font-weight: 400;
+    background-color: transparent;
+    border-color: $accent;
+    color: $black700;
+    padding: 17px 27px;
+
+    &:hover {
+      background-color: $black700;
+      border-color: transparent;
+      color: $white;
+    }
+
+    &:focus {
+      color: $black700;
+      background-color: rgba($accent10, .1);
+      border-color: $accent;
+      opacity: 1;
+    }
+  }
+
+  &__actions {
+    margin-top: 7px;
+    @include flex-align-center(16);
+  }
+
+  &__action {
+    display: flex;
+    max-width: max-content;
+    transition: color .4s, opacity .4s;
+
+    &.edit {
+      color: #cea911;
+
+      &:hover {
+        color: $black500;
+      }
+
+      &:focus {
+        color: #cea911;
+        opacity: .5;
+      }
+    }
+
+    &.delete {
+      color: #e31f41;
+
+      &:hover {
+        color: $black500;
+      }
+
+      &:focus {
+        color: #e31f41;
+        opacity: .5;
+      }
+    }
+  }
+}

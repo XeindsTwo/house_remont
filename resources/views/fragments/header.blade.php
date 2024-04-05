@@ -16,7 +16,7 @@
             <a class="header__link" href="">Услуги и цены</a>
           </li>
           <li>
-            <a class="header__link" href="">Портфолио</a>
+            <a class="header__link" href="{{route('page.works')}}">Портфолио</a>
           </li>
           <li>
             <a class="header__link" href="{{route('contacts')}}">Контакты</a>

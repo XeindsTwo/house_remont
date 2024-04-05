@@ -1,0 +1,46 @@
+.custom-file-upload {
+  @include flex-align-center(10);
+  border: 1px solid $gray300;
+  display: flex;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  max-width: max-content;
+  transition: background-color .4s, border .4s;
+
+  &:hover {
+    border-color: $accent;
+  }
+
+  input {
+    display: none;
+  }
+
+  &__delete {
+    margin-top: 8px;
+    color: #c91919;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+    transition: color .4s, border .4s;
+
+    &:hover {
+      border-bottom-color: #c91919;
+    }
+
+    &:focus {
+      color: rgba(#c91919, .6);
+    }
+  }
+}
+
+#file-list {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 20px;
+
+  img {
+    @include objectCoverBg;
+    width: 100%;
+  }
+}
