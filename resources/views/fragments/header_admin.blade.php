@@ -8,6 +8,9 @@
         <li>
           <a class="header-admin__link" href="{{route('admin.feedback-request')}}">Управление онлайн-заявками</a>
         </li>
+        <li>
+          <a class="header-admin__link" href="{{route('admin.reviews')}}">Управление отзывами</a>
+        </li>
       </ul>
     </div>
   </div>

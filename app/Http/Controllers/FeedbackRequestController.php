@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FeedbackRequest;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Validator;
@@ -48,7 +49,7 @@ class FeedbackRequestController extends Controller
         ]);
 
         return response()->json(['message' => 'Фидбек-запрос успешно создан', 'feedback_request' => $feedbackRequest], 201, [], JSON_UNESCAPED_UNICODE);
-      } catch (\Exception $e) {
+      } catch (Exception $e) {
         return response()->json(['error' => 'Ошибка при обработке запроса: ' . $e->getMessage()], 500, [], JSON_UNESCAPED_UNICODE);
       }
     } else {

@@ -1,8 +1,9 @@
 @include('fragments/head', ['title' => 'Управление онлайн-заявками'])
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 <body class="body">
 @include('fragments.header_admin')
 <main>
-  <section class="admin-feedback">
+  <section class="admin__bottom">
     <div class="container">
       <h1 class="admin__title">Управление онлайн-заявками</h1>
       @if($feedbackRequests->isEmpty())
@@ -14,10 +15,12 @@
             <button class="admin-feedback__delete" type="button" data-id="{{$feedback->id}}">
               Удалить заявку
             </button>
-            <p>Время создания: {{ \Carbon\Carbon::parse($feedback->created_at)->locale('ru')->isoFormat('D MMMM YYYY') }}</p>
+            <p>Время
+              создания: {{ \Carbon\Carbon::parse($feedback->created_at)->locale('ru')->isoFormat('D MMMM YYYY') }}</p>
             <p>Имя: {{ $feedback->name_feedback }}</p>
             <p>Телефон:
-              <a class="admin-feedback__link" href="tel:{{ $feedback->phone_feedback }}">{{ $feedback->phone_feedback }}</a>
+              <a class="admin-feedback__link"
+                 href="tel:{{ $feedback->phone_feedback }}">{{ $feedback->phone_feedback }}</a>
             </p>
             @if($feedback->comment_feedback)
               <p>Комментарий: {{ $feedback->comment_feedback }}</p>
@@ -40,6 +43,7 @@
   </section>
 </main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const deleteButtons = document.querySelectorAll('.admin-feedback__delete');
@@ -66,12 +70,19 @@
             const data = await response.json();
             console.log(data.message);
             button.closest('.admin-feedback__item').remove();
+            Toastify({
+              text: data.message,
+              duration: 4500,
+              position: 'left',
+              gravity: 'bottom',
+              backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+              stopOnFocus: true
+            }).showToast();
           } else {
             throw new Error('Ошибка при удалении заявки');
           }
         } catch (error) {
           console.error(error.message);
-          alert(error.message);
         }
       });
     });

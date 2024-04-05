@@ -8,7 +8,7 @@
   }
 
   &__list {
-    @include flex-align-center(20);
+    @include flex-align-center(30);
     margin-left: auto;
     flex-wrap: wrap;
   }
