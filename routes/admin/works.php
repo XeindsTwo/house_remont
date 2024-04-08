@@ -9,5 +9,5 @@ Route::middleware(['admin', 'checkdb'])->prefix('admin/works')->group(function (
   Route::get('/create', [WorkController::class, 'createWork'])->name('admin.works.page');
   Route::post('/create', [WorkController::class, 'store'])->name('admin.works.create');
   Route::get('/{id}/edit', [WorkController::class, 'edit'])->name('admin.works.edit');
-  Route::put('/{id}', [WorkController::class, 'update'])->name('admin.works.update');
+  Route::post('/{id}/edit', [WorkController::class, 'update'])->name('admin.works.update');
 });

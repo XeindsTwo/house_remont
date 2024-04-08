@@ -80,15 +80,16 @@ document.querySelector('form').addEventListener('submit', function (event) {
   })
     .then(response => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error('Ошибка сервера при выполнении запроса');
       }
       return response.json();
     })
     .then(data => {
-      console.log(data);
+      alert('Работа в портфолио была успешно создана!');
+      window.location.href = '/admin/works';
     })
     .catch(error => {
-      console.error('There has been a problem with your fetch operation:', error);
+      console.error('Проблема с сервером', error);
     });
 });
 

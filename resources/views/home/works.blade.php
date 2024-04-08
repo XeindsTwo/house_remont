@@ -6,7 +6,7 @@
       </h2>
       <div class="works__statistics">
         <a class="works__digital" href="">1332</a>
-        <p class="works__subtext">Квартиры <br> в портфолио</p>
+        <p class="works__subtext">Работ <br> в портфолио</p>
       </div>
     </div>
     <ul class="works__list">
@@ -46,6 +46,6 @@
         </p>
       </li>
     </ul>
-    <a class="works__more btn" href="{{route('page.works')}}">Посмотрите ещё 1332 работ</a>
+    <a class="works__more btn" href="{{route('page.works')}}">Посмотреть ещё работы</a>
   </div>
 </section>

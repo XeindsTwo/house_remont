@@ -21,7 +21,7 @@
             квартиры, дома и офисы с 2018 года
           </p>
         </div>
-        <a class="care__link" href="">
+        <a class="care__link" href="{{route('page.works')}}">
           Смотреть <br> все проекты
         </a>
       </div>

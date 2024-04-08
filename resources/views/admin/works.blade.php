@@ -13,13 +13,13 @@
       <ul class="admin-works__list">
         @foreach($works as $work)
           <li class="admin-works__item">
-            <div class="admin-works__content">
+            <a class="admin-works__content" href="{{route('portfolio.show', ['id' => $work->id])}}">
               @if($work->cost)
                 <span class="admin-works__cost">₽ {{$work->cost}}</span>
               @endif
               <img class="admin-works__img" src="{{asset('storage/works/' . $firstPhotos[$work->id]->photo_path)}}"
                    height="340">
-            </div>
+            </a>
             <h3 class="admin-works__name">{{$work->title}}</h3>
             <div class="admin-works__actions">
               <button class="admin-works__action delete"

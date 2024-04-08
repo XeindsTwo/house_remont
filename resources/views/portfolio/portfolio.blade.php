@@ -38,4 +38,7 @@
     </div>
   </section>
 </main>
+@if(!$works->isEmpty())
+  @include('fragments.footer')
+@endif
 </body>

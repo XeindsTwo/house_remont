@@ -95,7 +95,8 @@ class WorkController extends Controller
   public function edit($id)
   {
     $work = Work::findOrFail($id);
-    return view('admin.works_edit', compact('work'));
+    $photos = $work->photos;
+    return view('admin.works_edit', compact('work', 'photos'));
   }
 
   public function update(Request $request, $id)
@@ -112,7 +113,13 @@ class WorkController extends Controller
           'max:12',
         ],
         'description' => 'nullable|string|max:2000',
-        'photo.*' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5000',
+        'photo' => [
+          'required',
+          'array',
+          'min:5',
+          'max:15',
+        ],
+        'photo.*' => 'required|image|mimes:jpeg,png,jpg,webp|max:5000',
       ]);
 
       if ($validator->fails()) {
@@ -126,6 +133,12 @@ class WorkController extends Controller
         'description' => $request->description,
       ]);
 
+      $oldPhotos = $work->photos()->get();
+      foreach ($oldPhotos as $photo) {
+        Storage::delete('public/works/' . $photo->photo_path);
+      }
+
+      $work->photos()->delete();
       if ($request->hasFile('photo')) {
         foreach ($request->file('photo') as $photo) {
           $fileName = uniqid() . '.' . $photo->getClientOriginalExtension();

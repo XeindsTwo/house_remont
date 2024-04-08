@@ -20,10 +20,10 @@
       @if($reviews->isEmpty())
         <div class="reviews-page__empty">
           <img src="{{asset('static/images/icons/not-items.png')}}" width="48" height="48" alt="декор иконка">
-          <p class="reviews-page__subtext">Люди ещё не написали отзывов</p>
+          <p class="reviews-page__subtext">Люди ещё не написали отзывы</p>
           @auth
             <p class="reviews-page__info">
-              Пожалуйста, <a href="{{route('reviews.form')}}">напишите</a> хотя бы один отзыв.
+              Пожалуйста, <a href="{{route('reviews.form')}}">напишите</a> хотя бы один отзыв
             </p>
           @endauth
           @guest
