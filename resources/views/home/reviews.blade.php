@@ -53,7 +53,7 @@
                   >
                 @endif
                 <div class="reviews__info">
-                  <span class="reviews__name">{{ $review->user->name }}</span>
+                  <span class="reviews__name">{{ $review->name }}</span>
                 </div>
               </div>
               <p>{{ $review->content }}</p>

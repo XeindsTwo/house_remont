@@ -1,4 +1,4 @@
-@include('fragments.head', ['title' => 'Просто Ремонт | Портфолио работ'])
+@include('fragments.head', ['title' => 'Уютный дом | Портфолио работ'])
 <body class="body">
 @include('fragments.header')
 <main>

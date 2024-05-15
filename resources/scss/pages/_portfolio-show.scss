@@ -1,6 +1,7 @@
 .portfolio-show {
   &__top {
     @include flex-align-center(0);
+    justify-content: space-between;
     min-height: 530px;
     max-height: 560px;
     background-color: #242527;
@@ -10,7 +11,7 @@
   }
 
   &__left {
-    max-width: 400px;
+    max-width: 440px;
     width: 100%;
     padding: 40px 40px 25px;
   }
@@ -44,7 +45,7 @@
     @include objectCoverBg;
     width: 100%;
     height: auto;
-    max-width: 890px;
+    max-width: 850px;
   }
 
   &__description {

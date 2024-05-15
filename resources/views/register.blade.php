@@ -36,7 +36,7 @@
           </li>
           <li class="auth__item">
             <span class="error" id="passwordError">
-              Пароль может содержать только латинские буквы, цифры и нижнее подчеркивание
+              Пароль может содержать латиницу, спец. символы и цифры
             </span>
             <span class="error" id="passwordLengthError">Минимальное количество символов - 8</span>
             <div class="password-field">

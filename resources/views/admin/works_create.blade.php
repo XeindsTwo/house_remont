@@ -13,7 +13,7 @@
             <label class="label" for="title">Название:</label>
             <input class="admin-works__input input" type="text"
                    name="title" id="title" required
-                   minlength="15"
+                   minlength="7"
                    maxlength="255"
                    placeholder="Введите название"
             >

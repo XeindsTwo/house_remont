@@ -13,6 +13,9 @@
       <li>
         <a class="header-admin__link" href="{{route('admin.works')}}">Управление работами портфолио</a>
       </li>
+      <li>
+        <a class="header-admin__link" href="{{route('admin.estimates')}}">Управление заявлениями (расчет стоимости)</a>
+      </li>
     </ul>
   </div>
 </header>

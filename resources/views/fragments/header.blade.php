@@ -13,9 +13,6 @@
             <a class="header__link" href="{{route('reviews')}}">Отзывы</a>
           </li>
           <li>
-            <a class="header__link" href="">Услуги и цены</a>
-          </li>
-          <li>
             <a class="header__link" href="{{route('page.works')}}">Портфолио</a>
           </li>
           <li>
@@ -28,7 +25,7 @@
             @if(Auth::check())
               <a class="header__link" href="{{route('profile')}}">Личный кабинет</a>
             @else
-              <a class="header__link" href="{{route('login')}}">Личный кабинет</a>
+              <a class="header__link" href="{{route('login')}}">Войти</a>
             @endif
           </li>
         </ul>

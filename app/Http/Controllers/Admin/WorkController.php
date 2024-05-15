@@ -32,7 +32,7 @@ class WorkController extends Controller
   {
     try {
       $validator = Validator::make($request->all(), [
-        'title' => 'required|string|max:255|min:15',
+        'title' => 'required|string|max:255|min:7',
         'year' => 'required|digits:4',
         'cost' => [
           'nullable',
@@ -105,7 +105,7 @@ class WorkController extends Controller
       $work = Work::findOrFail($id);
 
       $validator = Validator::make($request->all(), [
-        'title' => 'required|string|max:255|min:15',
+        'title' => 'required|string|max:255|min:7',
         'year' => 'required|digits:4',
         'cost' => [
           'nullable',

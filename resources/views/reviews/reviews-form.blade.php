@@ -1,4 +1,4 @@
-@include('fragments/head', ['title' => 'Просто Ремонт | Оставить отзыв'])
+@include('fragments/head', ['title' => 'Уютный дом | Оставить отзыв'])
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 <body class="body">
 @include('fragments.header')

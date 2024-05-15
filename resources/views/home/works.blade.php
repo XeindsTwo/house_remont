@@ -5,47 +5,24 @@
         Выполненные работы по дизайну и ремонту
       </h2>
       <div class="works__statistics">
-        <a class="works__digital" href="">1332</a>
+        <span class="works__digital">{{ $worksCount }}</span>
         <p class="works__subtext">Работ <br> в портфолио</p>
       </div>
     </div>
     <ul class="works__list">
-      <li class="works__item">
-        <span class="works__price">₽ 1 093 000</span>
-        <a class="works__link" href="">
-          <img src="{{asset('static/images/1.jpg')}}" alt="Ремонт квартир Белореченск">
-        </a>
-        <p class="works__name">
-          Дизайн большой квартиры 137 м2
-        </p>
-      </li>
-      <li class="works__item">
-        <a class="works__link" href="">
-          <img src="{{asset('static/images/2.jpg')}}" alt="Ремонт квартир Белореченск">
-        </a>
-        <p class="works__name">
-          Дизайн большой квартиры 137 м2
-        </p>
-      </li>
-      <li class="works__item">
-        <span class="works__price">₽ 2 034 500</span>
-        <a class="works__link" href="">
-          <img src="{{asset('static/images/3.jpg')}}" alt="Ремонт квартир Белореченск">
-        </a>
-        <p class="works__name">
-          Дизайн большой квартиры 137 м2
-        </p>
-      </li>
-      <li class="works__item">
-        <span class="works__price">₽ 540 000</span>
-        <a class="works__link" href="">
-          <img src="{{asset('static/images/4.jpg')}}" alt="Ремонт квартир Белореченск">
-        </a>
-        <p class="works__name">
-          Дизайн большой квартиры 137 м2
-        </p>
-      </li>
+      @foreach ($latestWorks as $work)
+        <li class="works__item">
+          @if($work->cost)
+            <span class="works__price">₽ {{$work->cost}}</span>
+          @endif
+          <a class="works__link" href="{{ route('portfolio.show', $work->id) }}">
+            <img class="portfolio__img" src="{{asset('storage/works/' . $firstPhotos[$work->id]->photo_path)}}"
+                 height="340">
+          </a>
+          <p class="works__name">{{ $work->title }}</p>
+        </li>
+      @endforeach
     </ul>
-    <a class="works__more btn" href="{{route('page.works')}}">Посмотреть ещё работы</a>
+    <a class="works__more btn" href="{{ route('page.works') }}">Посмотреть ещё работы</a>
   </div>
 </section>

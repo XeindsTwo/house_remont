@@ -17,14 +17,6 @@
     outline: 1px solid transparent;
     border-radius: 7px;
     transition: color .4s, opacity .4s, outline-color .4s;
-
-    &:hover {
-      color: $blue35;
-    }
-
-    &:focus {
-      outline-color: $accent;
-    }
   }
 
   &__subtext {

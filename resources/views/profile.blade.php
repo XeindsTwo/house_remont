@@ -24,7 +24,7 @@
             <img class="profile__img" src="{{ asset('storage/avatars/' . $user->avatar) }}" width="160" height="160"
                  alt="Avatar">
           @else
-            <img class="profile__img" src="{{ asset('static/images/avatar.svg') }}" width="160" height="160"
+            <img class="profile__img" src="{{ asset('static/images/avatar.png') }}" width="160" height="160"
                  alt="Default Avatar">
           @endif
           <button class="profile__edit-avatar" type="button">

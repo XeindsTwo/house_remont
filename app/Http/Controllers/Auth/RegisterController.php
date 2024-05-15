@@ -25,7 +25,13 @@ class RegisterController extends Controller
         'login' => 'required|string|min:5|max:60|unique:users|regex:/^[a-zA-Z0-9_]+$/',
         'name' => 'required|string|min:2|max:50|regex:/^[A-Za-zА-Яа-яЁё\s\-]+$/u',
         'email' => 'required|email|unique:users,email',
-        'password' => 'required|string|min:8|max:60|regex:/^[a-zA-Z0-9_]+$/',
+          'password' => [
+            'required',
+            'string',
+            'min:8',
+            'max:60',
+            'regex:/^[^\sа-яА-Я]*$/u',
+          ], // запрещаем кириллицу
       ]);
 
       User::create([

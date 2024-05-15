@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
       name="description"
-      content="Просто ремонт - предлагаем вам свой уникальный дизайн и ремонт квартир в Белореченске"
+      content="Уютный дом - предлагаем вам свой уникальный дизайн и ремонт квартир в Белореченске"
   >
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>{{ $title ?? 'Просто Ремонт | Ремонт квартир в Белореченске' }}</title>
+  <title>{{ $title ?? 'Уютный дом | Ремонт квартир в Белореченске' }}</title>
   <link rel="icon" href="{{asset('static/images/icons/favicon.svg')}}" type="images/x-icon">
   <link rel="shortcut icon" href="{{asset('static/images/icons/favicon.svg')}}" type="images/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">

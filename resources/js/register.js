@@ -2,7 +2,7 @@ $(document).ready(function () {
   function validateName() {
     const nameValue = $("#name").val();
     const nameError = $("#nameError");
-    const regex = /^[A-Za-zА-я\-]+$/;
+    const regex = /^[A-Za-zА-Яа-я\-]+$/;
 
     if (nameValue.trim() === "") {
       nameError.removeClass("error--active");
@@ -21,11 +21,8 @@ $(document).ready(function () {
 
   function validateEmail() {
     const emailValue = $("#email").val();
-    const emailError = $("#emailError");
     const emailErrorParameters = $("#emailErrorParameters");
     const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-    let valid = true;
 
     if (emailValue.trim() === '') {
       emailErrorParameters.removeClass("error--active");
@@ -39,34 +36,12 @@ $(document).ready(function () {
       emailErrorParameters.removeClass("error--active");
     }
 
-    $.ajax({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },
-      type: 'POST',
-      url: '/check-email',
-      data: {
-        email: emailValue
-      },
-      success: function (response) {
-        if (response.exists) {
-          emailError.addClass('error--active');
-        } else {
-          emailError.removeClass('error--active');
-        }
-      },
-      error: function (xhr, status, error) {
-        console.error(error);
-      }
-    });
-
-    return valid;
+    return true;
   }
 
   function validateLogin() {
     const loginValue = $("#login").val();
     const loginError = $("#loginError");
-    const loginCheckError = $("#loginCheckError");
     const loginLengthError = $("#loginLengthError");
 
     if (loginValue.trim() === "") {
@@ -91,29 +66,6 @@ $(document).ready(function () {
       loginLengthError.removeClass("error--active");
     }
 
-    $.ajax({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },
-      type: 'POST',
-      url: '/check-login',
-      data: {
-        login: loginValue
-      },
-      success: function (response) {
-        if (response.exists) {
-          loginCheckError.addClass('error--active');
-          updateSubmitButtonState();
-        } else {
-          loginCheckError.removeClass('error--active');
-          updateSubmitButtonState();
-        }
-      },
-      error: function (xhr, status, error) {
-        console.error(error);
-      }
-    });
-
     return valid;
   }
 
@@ -130,7 +82,7 @@ $(document).ready(function () {
 
     let valid = true;
 
-    const regex = /^[a-zA-Z0-9_]+$/;
+    const regex = /^[^\sа-яА-Я]*$/;
     if (!regex.test(passwordValue)) {
       passwordError.addClass("error--active");
       valid = false;
@@ -148,15 +100,73 @@ $(document).ready(function () {
     return valid;
   }
 
+  function validateForm(event) {
+    event.preventDefault();
+
+    const nameValid = validateName();
+    const emailValid = validateEmail();
+    const loginValid = validateLogin();
+    const passwordValid = validatePassword();
+
+    if (nameValid && emailValid && loginValid && passwordValid) {
+      const emailValue = $("#email").val();
+      const loginValue = $("#login").val();
+      const emailError = $("#emailError");
+      const loginCheckError = $("#loginCheckError");
+
+      $.ajax({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        type: 'POST',
+        url: '/check-login',
+        data: { login: loginValue },
+        success: function (response) {
+          if (response.exists) {
+            loginCheckError.addClass('error--active');
+          } else {
+            loginCheckError.removeClass('error--active');
+
+            $.ajax({
+              headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              type: 'POST',
+              url: '/check-email',
+              data: { email: emailValue },
+              success: function (response) {
+                if (response.exists) {
+                  emailError.addClass('error--active');
+                } else {
+                  emailError.removeClass('error--active');
+
+                  // если все ок, то отправляем форму
+                  if (!$(".error--active").length) {
+                    $("#formAuth").off('submit').submit();
+                  }
+                }
+              },
+              error: function (xhr, status, error) {
+                console.error(error);
+              }
+            });
+          }
+        },
+        error: function (xhr, status, error) {
+          console.error(error);
+        }
+      });
+    }
+  }
+
   function updateSubmitButtonState() {
     const nameValid = validateName();
     const emailValid = validateEmail();
     const loginValid = validateLogin();
     const passwordValid = validatePassword();
     const submitButton = $("#registration-btn");
-    const hasErrors = $(".error--active").length > 0;
 
-    if (nameValid && emailValid && loginValid && passwordValid && !hasErrors) {
+    if (nameValid && emailValid && loginValid && passwordValid) {
       submitButton.prop("disabled", false);
       submitButton.css("opacity", "1");
       submitButton.css("pointer-events", "auto");
@@ -170,6 +180,8 @@ $(document).ready(function () {
   $("#name").on("input", updateSubmitButtonState);
   $("#email").on("input", updateSubmitButtonState);
   $("#password").on("input", updateSubmitButtonState);
-  $("#login").on("blur", validateLogin);
+  $("#login").on("input", updateSubmitButtonState);
+
+  $("#formAuth").on("submit", validateForm);
   updateSubmitButtonState();
 });

@@ -1,6 +1,7 @@
-@include('fragments/head', ['title' => 'Просто Ремонт'])
+@include('fragments/head', ['title' => 'Уютный дом'])
 <body class="body">
 @include('fragments.header')
+@include('fragments.cost_calculation')
 <main>
   @include('home/start')
   @include('home/works')
@@ -13,6 +14,7 @@
 </main>
 @include('fragments/footer')
 @vite(['resources/js/app.js'])
+@vite(['resources/js/cost.js'])
 @vite(['resources/js/components/accordion.js'])
 @vite(['resources/js/components/phone-mask.js'])
 </body>
