@@ -8,22 +8,72 @@
     color: $white;
     margin-bottom: 48px;
     overflow: hidden;
+    @media (max-width: 1300px) {
+      max-height: 530px;
+    }
+    @include r($desktop) {
+      margin-bottom: 34px;
+    }
+    @include r($lg) {
+      margin: 0 -15px 34px;
+      flex-direction: column-reverse;
+      min-height: initial;
+      max-height: initial;
+    }
   }
 
   &__left {
     max-width: 440px;
     width: 100%;
     padding: 40px 40px 25px;
+    @include r($desktop) {
+      padding-left: 32px;
+    }
+    @include r($lg) {
+      margin-right: auto;
+      max-width: 100%;
+      padding: 35px 15px;
+    }
+    @media (max-width: 860px) {
+      padding: 30px 15px;
+    }
   }
 
   &__title {
     font-weight: 500;
     font-size: 34px;
     margin-bottom: 40px;
+    @media (max-width: 1300px) {
+      font-size: 30px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 28px;
+    }
+    @include r($lg) {
+      font-size: 26px;
+    }
+    @include r($tablet) {
+      font-size: 24px;
+    }
+    @include r($sm) {
+      font-size: 22px;
+    }
+    @include r($phone) {
+      font-size: 20px;
+    }
   }
 
   &__list {
     @include flex-column(46);
+
+    @include r($lg) {
+      flex-direction: row;
+      gap: 66px;
+    }
+    @include r($sm) {
+      flex-direction: column;
+      gap: 26px;
+    }
   }
 
   &__item {
@@ -39,6 +89,9 @@
   &__value {
     font-weight: 500;
     font-size: 18px;
+    @include r($phone) {
+      font-size: 16px;
+    }
   }
 
   &__img {
@@ -46,6 +99,36 @@
     width: 100%;
     height: auto;
     max-width: 850px;
+    @media (max-width: 1300px) {
+      max-width: 810px;
+    }
+    @include r($desktop) {
+      max-width: 730px;
+    }
+    @media (max-width: 1110px) {
+      max-width: 670px;
+      align-self: stretch;
+    }
+    @media (max-width: 1060px) {
+      max-width: 610px;
+    }
+    @include r($lg) {
+      max-width: 100%;
+      width: 100%;
+      height: 350px;
+    }
+    @media (max-width: 800px) {
+      height: 320px;
+    }
+    @include r($sm) {
+      height: 300px;
+    }
+    @media (max-width: 530px) {
+      height: 270px;
+    }
+    @include r($phone) {
+      height: 250px;
+    }
   }
 
   &__description {
@@ -58,18 +141,51 @@
     padding: 45px 0;
     margin-bottom: -120px;
     background-color: #fafafa;
+    @media (max-width: 1300px) {
+      margin-bottom: -100px;
+    }
+    @media (max-width: 1100px) {
+      margin-bottom: -70px;
+    }
+    @include r($lg) {
+      padding: 30px 0;
+    }
+    @media (max-width: 930px) {
+      margin-bottom: -50px;
+    }
+    @include r($phone) {
+      margin: 0 -15px;
+    }
   }
 
   &__subtitle {
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 18px;
+    @include r($tablet) {
+      font-size: 26px;
+    }
+    @include r($sm) {
+      font-size: 24px;
+    }
+    @include r($phone) {
+      padding: 0 15px;
+    }
   }
 
   &__photos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+    @include r($lg) {
+      grid-gap: 6px;
+    }
+    @media (max-width: 860px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 420px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__link {
@@ -89,5 +205,23 @@
   &__photo {
     @include objectCoverBg;
     width: 100%;
+    @media (max-width: 1100px) {
+      height: 420px;
+    }
+    @include r($lg) {
+      height: 380px;
+    }
+    @media (max-width: 880px) {
+      height: 340px;
+    }
+    @media (max-width: 515px) {
+      height: 310px;
+    }
+    @include r($phone) {
+      height: 290px;
+    }
+    @media (max-width: 380px) {
+      height: 270px;
+    }
   }
 }

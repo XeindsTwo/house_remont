@@ -9,6 +9,22 @@
     line-height: 1.22;
     max-width: 650px;
     font-weight: 500;
+    @media (max-width: 1100px) {
+      font-size: 36px;
+    }
+    @include r($lg) {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    @include r($tablet) {
+      font-size: 28px;
+    }
+    @include r($sm) {
+      font-size: 26px;
+    }
+    @include r($phone) {
+      font-size: 24px;
+    }
   }
 
   &__subtext {
@@ -27,11 +43,25 @@
       margin-bottom: 14px;
       display: flex;
       color: #FC8E70;
+      @media (max-width: 1100px) {
+        font-size: 24px;
+      }
+      @include r($tablet) {
+        font-size: 22px;
+      }
+      @include r($sm) {
+        font-size: 20px;
+        font-weight: 500;
+      }
     }
 
     &-text {
       @include flex-column(20);
       line-height: 1.6;
+      @include r($phone) {
+        font-size: 14px;
+        line-height: 1.5;
+      }
     }
 
     &-list {

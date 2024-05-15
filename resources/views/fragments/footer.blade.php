@@ -29,9 +29,9 @@
     </div>
     <div class="footer__links">
       <a class="footer__link" href="{{route('company')}}">О компании</a>
-      <a class="footer__link" href="">Наше портфолио</a>
+      <a class="footer__link" href="{{route('page.works')}}">Наше портфолио</a>
       <a class="footer__link" href="{{route('contacts')}}">Контакты</a>
-      <a class="footer__link" href="">Блог новостей</a>
+      <a class="footer__link" href="{{route('blog')}}">Блог новостей</a>
       <a class="footer__link" href="{{route('reviews')}}">Отзывы</a>
     </div>
     <div class="footer__bottom">

@@ -4,6 +4,9 @@
   white-space: normal;
   font-size: 16px;
   margin-bottom: 42px;
+  @include r($phone) {
+    font-size: 14px;
+  }
 
   &__item {
     display: flex;
@@ -49,6 +52,12 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       text-fill-color: transparent;
+      @include r($phone) {
+        background: none;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: initial;
+        color: $accent;
+      }
     }
   }
 }

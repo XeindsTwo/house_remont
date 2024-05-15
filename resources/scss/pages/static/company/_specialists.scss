@@ -3,10 +3,21 @@
     margin-bottom: 60px;
     @include flex-align-center(30);
     justify-content: space-between;
+    @include r($lg) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 45px;
+    }
 
     p {
       max-width: 475px;
       margin-left: auto;
+      @include r($lg) {
+        margin-left: 0;
+      }
+      @include r($phone) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -23,6 +34,18 @@
   .swiper-slide {
     max-width: 260px;
     user-select: none;
+    @media (max-width: 1300px) {
+      max-width: 230px;
+    }
+    @media (max-width: 870px) {
+      max-width: 210px;
+    }
+    @include r($tablet) {
+      max-width: 200px;
+    }
+    @include r($sm) {
+      max-width: 180px;
+    }
   }
 
   &__slide {
@@ -34,6 +57,23 @@
     object-position: top;
     border-radius: 50%;
     margin-bottom: 14px;
+    @media (max-width: 1300px) {
+      width: 230px;
+      height: 230px;
+    }
+    @media (max-width: 1100px) {
+      width: 210px;
+      height: 210px;
+      margin: 0 auto 14px;
+    }
+    @media (max-width: 870px) {
+      width: 200px;
+      height: 200px;
+    }
+    @include r($sm) {
+      width: 180px;
+      height: 180px;
+    }
   }
 
   &__name {
@@ -42,9 +82,15 @@
     font-weight: 500;
     margin-bottom: 6px;
     display: block;
+    @media (max-width: 870px) {
+      font-size: 16px;
+    }
   }
 
   &__job {
     line-height: 1.25;
+    @media (max-width: 870px) {
+      font-size: 14px;
+    }
   }
 }

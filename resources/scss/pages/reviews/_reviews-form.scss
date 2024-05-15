@@ -1,7 +1,18 @@
 .reviews-form {
+  padding-bottom: 30px;
+  @include r($phone) {
+    padding-bottom: 20px;
+  }
+
   &__content {
     display: flex;
     gap: 60px;
+    @media (max-width: 860px) {
+      gap: 40px;
+    }
+    @media (max-width: 810px) {
+      flex-direction: column;
+    }
   }
 
   &__left {
@@ -21,6 +32,7 @@
     border-radius: 5px;
     border: 1px solid $black500;
     padding: 14px;
+    display: flex;
     margin-top: 4px;
 
     &.textarea {
@@ -36,7 +48,7 @@
     background-color: $black500;
     color: $white;
     border-color: $black500;
-    padding: 15px 28px;
+    padding: 17px 35px;
     margin-right: auto;
 
     &:hover {
@@ -70,5 +82,27 @@
     background-color: #e8e8e8;
     border-radius: 8px;
     cursor: pointer;
+    @include r($desktop) {
+      height: 590px;
+    }
+    @media (max-width: 1100px) {
+      height: 560px;
+    }
+    @include r($lg) {
+      height: 530px;
+    }
+    @include r($sm) {
+      height: 500px;
+    }
+    @include r($phone) {
+      height: 460px;
+      font-size: 14px;
+    }
+    @media (max-width: 415px) {
+      height: 440px;
+    }
+    @media (max-width: 385px) {
+      height: 425px;
+    }
   }
 }

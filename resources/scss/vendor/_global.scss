@@ -85,6 +85,15 @@ html {
 
   &--big {
     margin-top: 120px;
+    @media (max-width: 1100px) {
+      margin-top: 100px;
+    }
+    @include r($lg) {
+      margin-top: 90px;
+    }
+    @include r($tablet) {
+      margin-top: 80px;
+    }
   }
 
   &--breadcrumbs {
@@ -100,6 +109,18 @@ html {
   max-width: 500px;
   line-height: 1.22;
   position: relative;
+  @include r($lg) {
+    font-size: 38px;
+  }
+  @include r($tablet) {
+    font-size: 34px;
+  }
+  @include r($sm) {
+    font-size: 30px;
+  }
+  @include r($phone) {
+    font-size: 26px;
+  }
 
   &::before {
     @include pseudo;

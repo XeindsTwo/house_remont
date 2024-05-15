@@ -7,7 +7,6 @@
   @include('home/works')
   @include('home/steps')
   @include('home/care')
-  @include('home/services')
   @include('home/reviews')
   @include('home/faq')
   @include('home/feedback')

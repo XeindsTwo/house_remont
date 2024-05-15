@@ -3,11 +3,37 @@
     font-weight: 500;
     font-size: 46px;
     margin-bottom: 48px;
+    @include r($desktop) {
+      font-size: 42px;
+      margin-bottom: 30px;
+    }
+    @include r($lg) {
+      font-size: 38px;
+    }
+    @include r($tablet) {
+      font-size: 34px;
+    }
+    @include r($sm) {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    @include r($phone) {
+      font-size: 26px;
+    }
   }
 
   &__text {
     @include flex-column(26.56);
     line-height: 1.5;
+    @include r($lg) {
+      gap: 22px;
+    }
+    @include r($sm) {
+      gap: 20px;
+    }
+    @include r($phone) {
+      font-size: 14px;
+    }
 
     a {
       transition: color .4s, border .4s;

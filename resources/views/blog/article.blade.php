@@ -22,7 +22,7 @@
       <div class="article__content">
         <img class="article__img" src="{{ asset('/storage/' . $article->image) }}" height="440" alt="">
         <h1 class="article__title">{{$article->title}}</h1>
-        <div class="article__content">
+        <div class="article__wrapper">
           {!! htmlspecialchars_decode($article->content) !!}
         </div>
       </div>
