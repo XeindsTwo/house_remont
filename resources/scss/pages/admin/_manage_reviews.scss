@@ -164,6 +164,7 @@
 
   &__photo {
     display: flex;
+    align-self: flex-start;
     overflow: hidden;
     border: 2px solid transparent;
     transition: opacity .4s, border .4s;

@@ -7,3 +7,4 @@ require_once __DIR__ . '/auth.php';
 require_once __DIR__ . '/errors.php';
 require_once __DIR__ . '/reviews.php';
 require_once __DIR__ . '/portfolio.php';
+require_once __DIR__ . '/articles.php';

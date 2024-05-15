@@ -48,7 +48,7 @@
                        width="58" height="58" alt="аватар пользователя"
                   >
                 @else
-                  <img class="reviews__avatar" src="{{asset('static/images/avatar.svg')}}"
+                  <img class="reviews__avatar" src="{{asset('static/images/avatar.png')}}"
                        width="58" height="58" alt="аватар пользователя"
                   >
                 @endif

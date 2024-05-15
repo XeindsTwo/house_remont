@@ -19,7 +19,7 @@
             <a class="header__link" href="{{route('contacts')}}">Контакты</a>
           </li>
           <li>
-            <a class="header__link" href="">Блог</a>
+            <a class="header__link" href="{{route('blog')}}">Блог</a>
           </li>
           <li>
             @if(Auth::check())

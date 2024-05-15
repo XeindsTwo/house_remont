@@ -1,0 +1,52 @@
+.blog {
+  padding-bottom: 30px;
+
+  &__title {
+    font-weight: 500;
+    font-size: 46px;
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    max-width: 610px;
+  }
+
+  &__list {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px 30px;
+  }
+
+  &__item {
+    @include flex-column(10);
+  }
+
+  &__date {
+    color: $blue35;
+    font-size: 15px;
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 3px;
+    transition: color .4s;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    border-radius: 5px;
+  }
+
+  &__empty {
+    margin: 50px auto 0;
+    font-size: 18px;
+    text-align: center;
+    max-width: 240px;
+  }
+}

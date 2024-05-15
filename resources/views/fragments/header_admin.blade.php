@@ -16,6 +16,9 @@
       <li>
         <a class="header-admin__link" href="{{route('admin.estimates')}}">Управление заявлениями (расчет стоимости)</a>
       </li>
+      <li>
+        <a class="header-admin__link" href="{{route('admin.articles.index')}}">Управление статьями</a>
+      </li>
     </ul>
   </div>
 </header>

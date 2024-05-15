@@ -21,7 +21,7 @@
                        width="60" height="60" alt="аватар пользователя"
                   >
                 @else
-                  <img class="" src="{{ asset('static/images/avatar.svg') }}"
+                  <img class="" src="{{ asset('static/images/avatar.png') }}"
                        width="60" height="60" alt="стандартный аватар"
                   >
                 @endif

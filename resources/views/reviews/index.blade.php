@@ -53,7 +53,7 @@
                          width="60" height="60" alt="аватар пользователя"
                     >
                   @else
-                    <img class="reviews-page__avatar" src="{{ asset('static/images/avatar.svg') }}"
+                    <img class="reviews-page__avatar" src="{{ asset('static/images/avatar.png') }}"
                          width="60" height="60" alt="Стандартный аватар"
                     >
                   @endif
