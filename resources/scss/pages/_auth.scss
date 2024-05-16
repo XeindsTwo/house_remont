@@ -6,20 +6,43 @@
     width: 100%;
     padding: 42px 36px 26px;
     margin: 150px auto 0;
+    @include r($sm) {
+      margin-top: 30px;
+      padding: 42px 25px 20px;
+      border-radius: 22px;
+    }
   }
 
   &__logo {
     margin-bottom: 30px;
+    @include r($sm) {
+      img {
+        width: 80%;
+      }
+    }
   }
 
   &__inner {
     display: flex;
     justify-content: space-between;
     gap: 130px;
+    @include r($lg) {
+      gap: 80px;
+    }
+    @include r($tablet) {
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
   &__content {
     max-width: 370px;
+    @include r($lg) {
+      max-width: 230px;
+    }
+    @include r($tablet) {
+      max-width: 100%;
+    }
   }
 
   &__title {
@@ -27,6 +50,15 @@
     line-height: 1;
     font-weight: 400;
     margin-bottom: 16px;
+    @include r($tablet) {
+      font-size: 32px;
+    }
+    @media (max-width: 550px) {
+      font-size: 28px;
+    }
+    @include r($phone) {
+      font-size: 26px;
+    }
   }
 
   &__text {
@@ -60,6 +92,9 @@
     @include flex-align-center(25);
     justify-content: flex-end;
     margin-top: 38px;
+    @include r($tablet) {
+      margin-top: 28px;
+    }
   }
 
   &__btn {
