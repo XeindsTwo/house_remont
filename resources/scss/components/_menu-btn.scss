@@ -7,43 +7,30 @@
   position: relative;
   border-radius: 50%;
   border: 1px solid $black800;
-  padding: 18px 16px;
   transition: border .3s, opacity .3s;
-
-  &--header {
-    @media (max-width: 1290px) {
-      display: block;
-    }
-  }
-
-  &--footer {
-    @media (max-width: 930px) {
-      display: block;
-    }
+  @media (max-width: 1040px) {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &:hover {
-    border-color: $primary400;
+    border-color: $accent;
   }
 
   &:focus {
     opacity: .5;
   }
 
-  @media(max-width: 800px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   &__line,
   &__line::after,
   &__line::before {
-    background-color: $white;
+    background-color: $accent;
     content: '';
     left: 0;
     top: 0;
-    width: 15px;
+    width: 17px;
     height: 2px;
     transition: .3s ease-in-out .3s;
   }

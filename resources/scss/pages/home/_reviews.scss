@@ -9,6 +9,9 @@
     @include flex-between(20);
     align-items: center;
     margin-bottom: 35px;
+    @include r($phone) {
+      flex-direction: column;
+    }
   }
 
   &__control {
@@ -83,25 +86,70 @@
 
   .swiper-slide {
     max-width: 912px;
+    @include r($desktop) {
+      max-width: 860px;
+    }
   }
 
   &__slide {
     display: flex;
     gap: 40px;
+    @media (max-width: 895px) {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+    }
+    @include r($phone) {
+      gap: 30px;
+    }
   }
 
   &__content {
     max-width: 352px;
+    @media (max-width: 895px) {
+      max-width: 660px;
+      padding: 0 15px;
+    }
+
+    p {
+      @include r($phone) {
+        font-size: 14px;
+      }
+    }
   }
 
   &__img {
     @include objectCoverBg;
     user-select: none;
+    @include r($desktop) {
+      width: 470px;
+    }
+    @include r($lg) {
+      width: 440px;
+      height: 560px;
+    }
+    @media (max-width: 880px) {
+      height: 510px;
+      width: 420px;
+    }
+    @media (max-width: 660px) {
+      height: 450px;
+      width: 400px;
+    }
+    @media (max-width: 530px) {
+      height: 420px;
+    }
   }
 
   &__user {
     @include flex-align-center(16);
     margin-bottom: 30px;
+    @media (max-width: 895px) {
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      margin: 0 auto 20px;
+    }
   }
 
   &__avatar {

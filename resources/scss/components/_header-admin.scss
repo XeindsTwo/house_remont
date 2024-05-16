@@ -7,6 +7,9 @@
     @include flex-align-center(30);
     margin-left: auto;
     flex-wrap: wrap;
+    @include r($lg) {
+      grid-gap: 20px;
+    }
   }
 
   &__link {

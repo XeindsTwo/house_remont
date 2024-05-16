@@ -8,12 +8,18 @@
     top: 0;
     width: calc(100vw - 55%);
     height: 100%;
+    @media (max-width: 920px) {
+      display: none;
+    }
   }
 
   &__title {
     font-weight: 300;
     padding-bottom: 0;
     margin-bottom: 30px;
+    @media (max-width: 920px) {
+      margin-bottom: 20px;
+    }
 
     &::before {
       display: none;

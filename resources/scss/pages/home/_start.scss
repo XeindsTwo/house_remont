@@ -5,9 +5,33 @@
     padding: 80px;
     color: $white;
     position: relative;
+    z-index: 1;
     min-height: 640px;
     @include bg;
     background-image: url("../../public/static/images/home-start.jpg");
+    @include r($desktop) {
+      padding: 60px;
+    }
+    @media (max-width: 1100px) {
+      min-height: 600px;
+      padding: 50px;
+    }
+    @include r($lg) {
+      min-height: 560px;
+    }
+    @include r($tablet) {
+      min-height: 530px;
+      padding: 40px;
+    }
+    @include r($sm) {
+      padding: 40px 15px;
+      align-items: flex-start;
+      min-height: 510px;
+      margin: 0 -15px;
+    }
+    @include r($phone) {
+      min-height: 490px;
+    }
 
     &::before {
       @include pseudo;
@@ -30,6 +54,21 @@
     line-height: 1.16;
     max-width: 700px;
     margin-bottom: 30px;
+    @media (max-width: 1100px) {
+      font-size: 40px;
+    }
+    @media (max-width: 870px) {
+      font-size: 36px;
+    }
+    @include r($tablet) {
+      font-size: 33px;
+    }
+    @include r($sm) {
+      font-size: 30px;
+    }
+    @include r($phone) {
+      font-size: 26px;
+    }
   }
 
   &__text {
@@ -37,6 +76,9 @@
     line-height: 1.5;
     margin-bottom: 20px;
     color: rgba($white, .9);
+    @include r($phone) {
+      font-size: 14px;
+    }
   }
 
   &__btn {
@@ -45,6 +87,9 @@
     padding: 17px 20px;
     position: relative;
     transition: border .4s, background-color .4s;
+    @include r($phone) {
+      font-size: 14px;
+    }
 
     &:hover {
       border-color: transparent;
