@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Validator;
 
 class WorkController extends Controller
 {
+  /**
+   * Отображает список всех работ.
+   *
+   * @return \Illuminate\View\View
+   */
   public function index()
   {
     $works = Work::all();
@@ -23,11 +28,22 @@ class WorkController extends Controller
     return view('admin.works', compact('works', 'firstPhotos'));
   }
 
+  /**
+   * Отображает форму создания новой работы.
+   *
+   * @return \Illuminate\View\View
+   */
   public function createWork()
   {
     return view('admin.works_create');
   }
 
+  /**
+   * Сохраняет новую работу.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\JsonResponse
+   */
   public function store(Request $request)
   {
     try {
@@ -60,7 +76,7 @@ class WorkController extends Controller
         'description' => $request->description,
       ]);
 
-      // сохранение фотографий
+      // Сохранение фотографий
       if ($request->hasFile('photo')) {
         foreach ($request->file('photo') as $photo) {
           $fileName = uniqid() . '.' . $photo->getClientOriginalExtension();
@@ -77,6 +93,12 @@ class WorkController extends Controller
     }
   }
 
+  /**
+   * Удаляет работу.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\JsonResponse
+   */
   public function destroy($id)
   {
     try {
@@ -92,6 +114,12 @@ class WorkController extends Controller
     }
   }
 
+  /**
+   * Отображает форму редактирования работы.
+   *
+   * @param  int  $id
+   * @return \Illuminate\View\View
+   */
   public function edit($id)
   {
     $work = Work::findOrFail($id);
@@ -99,6 +127,13 @@ class WorkController extends Controller
     return view('admin.works_edit', compact('work', 'photos'));
   }
 
+  /**
+   * Обновляет информацию о работе.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return \Illuminate\Http\JsonResponse
+   */
   public function update(Request $request, $id)
   {
     try {
