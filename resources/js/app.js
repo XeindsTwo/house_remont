@@ -7,6 +7,7 @@ new Swiper('.reviews__swiper', {
   spaceBetween: 70,
   centeredSlides: true,
   initialSlide: 2,
+  autoHeight: true,
   keyboard: {
     enabled: true,
   },
